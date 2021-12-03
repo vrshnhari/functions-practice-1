@@ -46,3 +46,75 @@ def fac(x):
     x-=1
   return b 
 print("factorial(5)= "+str(fac(5)))
+
+# Create a list of the numbers 1 through 20 (without hard-coding the list)
+list1=[1,2,3,4,5,6,7,8,9,10]
+
+# Create a list of the first 20 even numbers (without hard-coding the list)
+list2=[]
+for i in range(2,21):
+  if i%2==0:
+    list2.append(i)
+
+# Create a list of the first 10 perfect squares (without hard-coding the list)
+squares=[]
+for i in range(1,11):
+  squares.append(i*i)
+print(squares)
+
+# Write a function that takes in two lists and returns the sum of both lists
+addition=[]
+def n(x,y):
+  for i in range(len(y)):
+    a=0
+    a=x[i]+y[i]
+    addition.append(a)
+  return addition 
+print(n(list1,list2))
+    
+# Write a function that takes in a list and returns the minimum value in that list
+random=[3,2,7,8,5] #creates input list
+def minimum(x): #starts and establishes function
+  b=x[0]  #creates variable b which is the first number in the random list
+  for i in range(len(x)-1):  #creates a for loop which goes through values in random 
+    if x[i+1]<b:  #creates a if loop for whether the next value is less than the og one
+      b=x[i+1]  #if it is changes variable v
+  return b   #return's variable b
+print("The smallest number in this list is "+str((minimum(random)))) #prints minimum
+
+# Write a function that takes in a list and returns the maximum value in that list
+def maximum(x):
+  b=x[0]
+  for i in range(len(x)-1):
+    if x[i+1]>b:
+      b=x[i+1]
+  return b 
+print("The largest number in this list is "+str((maximum(random))))
+
+# Write a function that takes in a list of lists, and returns the sum of all those lists
+v=[]
+q=[[2,5,4,6],[8,4,2],[9,2,4]]
+def r(x,y,z):
+  for i in range(len(y)):
+    a=0
+    a=x[i]+y[i]+z[i]
+    v.append(a)
+  return v 
+print(r(q[0],q[1],q[2]))
+
+# Write a function that takes in a list of lists, and returns a new list made from “flattening” the lists (putting every element from each list into a single list)
+def flat(x):
+  newlist=[]
+  for j in x:
+    for i in range(len(j)):
+     newlist.append(j[i])
+  return newlist
+print("The new list with all the values is "+str(flat(q)))  
+  
+# Write a function that takes in a list of lists that returns a new list of all the individual maxes from each list. Can you find a way to use the function that you already made that returns the maximum of a list?
+ran=[]
+def lmax(x):
+  for i in x:
+    ran.append(maximum(i))
+  return ran 
+print("The maximum values of the lists are: "+str(lmax(q)))
